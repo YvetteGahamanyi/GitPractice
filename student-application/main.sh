@@ -1,43 +1,64 @@
-# creating a menu with the following options
-# Running a forever loop using while statement
-# This loop will run until select the exit option.
-# User will be asked to select option again and again
-while true;
-do
-	echo "SELECT YOUR FAVORITE FRUIT";
-echo "1. Add student"
-echo "2. View students"
-echo "3. Update student"
-echo "4. Edit student "
-echo "5. Search and Sort"
-echo "6. exit"
-echo -n "Enter your menu choice [1-6]: "
+#!/usr/bin/env bash
 
-# reading choice
-read choice
+students_file="students-list_1023.txt"
 
-# case statement is used to compare one value with the multiple cases.
-case $choice in
-  
-  1)  echo "Add a student"
-     ;;
-  
-  2)  echo "List of students"
-     ;;
-  
-  3)  echo "Update student"
-      ;;
+while true; do
+    echo "------------------"
+    echo "ALU Registration System"
+    echo "------------------"
+    echo "1. Create student record"
+    echo "2. View all students"
+    echo "3. Delete student record"
+    echo "4. Update student record"
+    echo "5. Select student emails"
+    echo "6. Exit"
 
-  4)  echo "Edit student"
-      ;;
-5)  echo "Searcg and sort"
-      ;;
+    read -p "Enter your choice: " choice
 
- 
-  6)  echo "Thanks"
-      exit;;
-  # Default Pattern
-  *) echo "invalid option";;
-  
-esac
+    case "$choice" in
+        1)
+            read -p "Enter student email: " email
+            read -p "Enter student age: " age
+            read -p "Enter student ID: " student_id
+
+            # Create student record
+            echo "Email: $email, Age: $age, ID: $student_id" >> "$students_file"
+            echo "Student record created."
+            ;;
+        2)
+            # View all students
+            echo "List of students:"
+            cat "$students_file"
+            ;;
+        3)
+            read -p "Enter student ID to delete: " delete_id
+
+            # Delete student record by student ID
+            sed -i "/ID: $delete_id/d" "$students_file"
+            echo "Student record deleted."
+            ;;
+        4)
+            read -p "Enter student ID to update: " update_id
+
+            # Update student record by student ID
+            read -p "Enter updated email: " updated_email
+            read -p "Enter updated age: " updated_age
+
+            sed -i "/ID: $update_id/c\Email: $updated_email, Age: $updated_age, ID: $update_id" "$students_file"
+            echo "Student record updated."
+            ;;
+        5)
+            # Select student emails and save to file
+            grep -oP 'Email: \K\S+' "$students_file" > "student-emails.txt"
+            echo "Student emails have been saved in student-emails.txt."
+            ;;
+        6)
+            # Exit the application
+            echo "Exiting the application."
+            exit 0
+            ;;
+        *)
+            echo "Invalid choice. Please try again."
+            ;;
+    esac
 done
