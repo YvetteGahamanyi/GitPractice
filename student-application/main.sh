@@ -5,28 +5,36 @@
 while true;
 do
 	echo "SELECT YOUR FAVORITE FRUIT";
-echo "1. Apple"
-echo "2. Grapes"
-echo "3. Mango"
-echo "4. Exit from menu "
-echo -n "Enter your menu choice [1-4]: "
+echo "1. Add student"
+echo "2. View students"
+echo "3. Update student"
+echo "4. Edit student "
+echo "5. Search and Sort"
+echo "6. exit"
+echo -n "Enter your menu choice [1-6]: "
 
 # reading choice
 read choice
 
 # case statement is used to compare one value with the multiple cases.
 case $choice in
-  # Pattern 1
-  1)  echo "You have selected the option 1"
-      echo "Selected Fruit is Apple. ";;
-  # Pattern 2
-  2)  echo "You have selected the option 2"
-      echo "Selected Fruit is Grapes. ";;
-  # Pattern 3
-  3)  echo "You have selected the option 3"
-      echo "Selected Fruit is Mango. ";;    
-  # Pattern 4
-  4)  echo "Quitting ..."
+  
+  1)  echo "Add a student"
+     ;;
+  
+  2)  echo "List of students"
+     ;;
+  
+  3)  echo "Update student"
+      ;;
+
+  4)  echo "Edit student"
+      ;;
+5)  echo "Searcg and sort"
+      ;;
+
+ 
+  6)  echo "Thanks"
       exit;;
   # Default Pattern
   *) echo "invalid option";;
