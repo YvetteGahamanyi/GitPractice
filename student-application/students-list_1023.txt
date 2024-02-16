@@ -1,5 +1,0 @@
-1   |20   | h.igiraneza@alustudent.com      
-2   |20   | manzimike@alustudent.com    
-3   |19   | ygahamanyi@alustudent.com     
-4   |20   | carine@alustudent.com 
-5  | 20  | ialice@alustudent.com 

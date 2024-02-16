@@ -2,8 +2,8 @@
 
 students_file="students-list_1023.txt"
 email_width=20
-age_width=2
-id_width=2
+age_width=3
+id_width=3
 
 while true; do
     echo "------------------"
@@ -31,7 +31,7 @@ while true; do
         2)
             # View all students
             echo "List of students:"
-            echo -e "ID$(printf '%*s' $((id_width - 2)) " ") |Age$(printf '%*s' $((age_width - 3)) " ") |Email$(printf '%*s' $((email_width - 5)) " ")"
+            echo -e "ID$(printf '%*s' $((id_width - 2)) " ") | Age$(printf '%*s' $((age_width - 3)) " ")| Email$(printf '%*s' $((email_width - 5)) " ")"
             cat "$students_file"
             ;;
         3)
