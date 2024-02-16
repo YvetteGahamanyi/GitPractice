@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 
 students_file="students-list_1023.txt"
+email_width=20
+age_width=2
+id_width=2
 
 while true; do
     echo "------------------"
@@ -22,12 +25,13 @@ while true; do
             read -p "Enter student ID: " student_id
 
             # Create student record
-            echo "Email: $email, Age: $age, ID: $student_id" >> "$students_file"
+            echo "$student_id$(printf '%*s' $((id_width - ${#student_id})) " ") | $age$(printf '%*s' $((age_width - ${#age})) " ") | $email$(printf '%*s' $((email_width - ${#email})) " ")" >> "$students_file"
             echo "Student record created."
             ;;
         2)
             # View all students
             echo "List of students:"
+            echo -e "ID$(printf '%*s' $((id_width - 2)) " ") |Age$(printf '%*s' $((age_width - 3)) " ") |Email$(printf '%*s' $((email_width - 5)) " ")"
             cat "$students_file"
             ;;
         3)

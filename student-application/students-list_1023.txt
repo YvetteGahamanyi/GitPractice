@@ -1,4 +1,4 @@
-Email: h.igiraneza@alustudent.com, Age: 20, ID: 1
-Email: ygahamanyi@alustudent.com, Age: 19, ID: 2
-Email: acarine@alustudent.com, Age: 20, ID: 3
-Email: manzimike@alustudent.com, Age: 20, ID: 4
+1   |20   | h.igiraneza@alustudent.com      
+2   |20   | manzimike@alustudent.com    
+3   |19   | ygahamanyi@alustudent.com     
+4   |20   | carine@alustudent.com 
