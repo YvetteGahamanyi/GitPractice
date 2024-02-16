@@ -48,9 +48,8 @@ while true; do
             echo "Student record updated."
             ;;
         5)
-            # Select student emails and save to file
-            grep -oP 'Email: \K\S+' "$students_file" > "student-emails.txt"
-            echo "Student emails have been saved in student-emails.txt."
+            # Select student emails, sort them and save to file
+            ./select-emails.sh
             ;;
         6)
             # Exit the application
